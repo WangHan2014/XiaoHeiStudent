@@ -9,6 +9,7 @@
 .cxx
 local.properties
 ./settings
+app/release
 
 # Built application files
 *.apk
