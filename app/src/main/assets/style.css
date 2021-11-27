@@ -26,20 +26,25 @@ div{
     border-radius: 10px;
     margin: 20px;
 }
-
 #time{
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     margin-top: 30px;
     height: 45px;
     padding: 10px;
-    font-weight: 600;
 }
 #info{
-    justify-content: center;
+    flex-direction: column;
     margin-top: 10px;
-    height: 280px;
+    padding: 30px;
     /* background-color: red; */
+}
+#info .title{
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    margin-top: -10px;
 }
 #bg{
     position: relative;
@@ -50,8 +55,6 @@ div{
     transform: translateX(-50%);
 }
 #code{
-    position: relative;
-    top: -250px;
     background-color: #83F07B;
     height: 110px;
     margin: auto 20px;
@@ -72,23 +75,11 @@ div{
     height: 40px;
     border-radius: 20px;
 }
-#cover{
-    flex-direction: column;
-    position: relative;
-    z-index: 99;
-    top: 45px;
-    left:62px;
-    line-height: 40px;
-    height: 220px;
-    font-size: 14px;
-    background-color: white;
-    width: 120px;
-}
 /* p */
-p:last-child{
+/* p:last-child{
     margin-top: 6px;
     line-height: 22px;
-}
+} */
 #tool{
     position: fixed;
     bottom: 100px;
@@ -119,4 +110,23 @@ p:last-child{
 }
 #toolpage button{
     width: 100px;
+}
+table{
+    transform: translateX(-15px);
+}
+table td{
+    width: 150px;
+    text-align: left;
+    height: 40px;
+    font-size: 14px;
+    font-size: 14px;
+}
+table .img{
+    text-align: right;
+}
+table img{
+    height: 18px;
+    margin-right: 0;
+    display: inline-block;
+    transform: translateY(1px);
 }

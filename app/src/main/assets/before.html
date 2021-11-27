@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文档</title>
+    <script src="urlData.js"></script>
     <style>
         * {
             margin: 0;
@@ -27,17 +28,14 @@
     <img src="./img/up.jpg" alt="">
     <img src="./img/Tabs.jpg" alt="" style="bottom: 0px;position: fixed;left: 50%;transform: translateX(-50%);">
     <script>
-        var mydate = new Date();
-        var year = mydate.getFullYear()
-        var month = mydate.getMonth() + 1
-        var day = mydate.getDate()
-        var stopy = 2021, stopm = 11, stopd = 28
-        if (year <= stopy && month <= stopm && day <= stopd) {
+        var stopTime = new Date("2099-12-12")
+        if (new Date().getTime() <= stopTime.getTime()) {
             document.body.addEventListener('click', function () {
-                location.href = 'index.html'
+                location.href = 'index.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
+                //location.href = 'index_dj.html'
             })
         } else {
-            document.body.innerHTML="软件已过期！"
+            document.body.innerHTML = "软件已过期！"
         }
     </script>
 </body>
