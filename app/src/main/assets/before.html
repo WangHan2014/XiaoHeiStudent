@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>文档</title>
     <script src="urlData.js"></script>
     <style>
@@ -25,19 +25,19 @@
 </head>
 
 <body>
-    <img src="./img/up.jpg" alt="">
-    <img src="./img/Tabs.jpg" alt="" style="bottom: 0px;position: fixed;left: 50%;transform: translateX(-50%);">
-    <script>
-        var stopTime = new Date("2099-12-12")
-        if (new Date().getTime() <= stopTime.getTime()) {
-            document.body.addEventListener('click', function () {
-                location.href = 'index.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
-                //location.href = 'index_dj.html'
-            })
-        } else {
-            document.body.innerHTML = "软件已过期！"
-        }
-    </script>
+<img alt="" src="./img/up.jpg">
+<img alt="" src="./img/Tabs.jpg" style="bottom: 0px;position: fixed;left: 50%;transform: translateX(-50%);">
+<script>
+    // var stopTime = new Date("2099-12-12")
+    // if (new Date().getTime() <= stopTime.getTime()) {
+    document.body.addEventListener('click', function () {
+        location.href = 'index.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
+        //location.href = 'index_dj.html'
+    })
+    // } else {
+    //     document.body.innerHTML = "软件已过期！"
+    // }
+</script>
 </body>
 
 </html>

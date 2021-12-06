@@ -1,4 +1,4 @@
-package com.xioahei;
+package com.xioahei.Util;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -8,7 +8,6 @@ import android.view.WindowManager;
 
 /**
  * 状态栏相关工具类
- *
  */
 public class StatusBarUtils {
 

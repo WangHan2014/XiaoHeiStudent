@@ -3,97 +3,98 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>文档</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
     <script src="urlData.js"></script>
 </head>
 
 <body>
-    <div id="header">
-        <img src="./img/btn_left.png" id="back2before">身份码
-    </div>
-    <div id="container">
-        <div id="time" class="card">
-            2021-
-        </div>
-        <script>
-            function time() {
-                let mydate = new Date();
-                let timeText = ""
-                timeText += mydate.getFullYear() + "-";
-                timeText += mydate.getMonth() + 1 + "-";
-                if (mydate.getDate() < 10)
-                    timeText += "0" + mydate.getDate() + " "
-                else
-                    timeText += mydate.getDate() + " "
-                if (mydate.getHours() < 10)
-                    timeText += "0" + mydate.getHours() + ":"
-                else
-                    timeText += mydate.getHours() + ":"
-                if (mydate.getMinutes() < 10)
-                    timeText += "0" + mydate.getMinutes() + ":"
-                else
-                    timeText += mydate.getMinutes() + ":"
-                if (mydate.getSeconds() < 10)
-                    timeText += "0" + mydate.getSeconds()
-                else
-                    timeText += mydate.getSeconds()
-                document.getElementById('time').innerHTML = timeText
-                setTimeout(time, 1000)
-            }
-            time()
-        </script>
-        <div id="info" class="card">
-            <p class="title">学生信息</p>
-            <table border="0">
-                <tbody>
-                    <tr>
-                        <td class="img"><img src="img/Name.png" alt=""></td>
-                        <td id="toinfo1">123</td>
-                    </tr>
-                    <tr>
-                        <td class="img"><img src="img/No.png" alt=""></td>
-                        <td id="toinfo2">4160210520</td>
-                    </tr>
-                    <tr>
-                        <td class="img"><img src="img/Class.png" alt=""></td>
-                        <td id="toinfo3">21本5</td>
-                    </tr>
-                    <tr>
-                        <td class="img"><img src="img/College.png" alt=""></td>
-                        <td id="toinfo4">学院</td>
-                    </tr>
-                    <tr>
-                        <td class="img"><img src="img/School.png" alt=""></td>
-                        <td id="toinfo5">武汉工程科技学院</td>
-                    </tr>
-                </tbody>
-            </table>
-            <script>
-                document.getElementById('toinfo1').innerHTML=decodeURI(getQueryVariable('Name'))
-                document.getElementById('toinfo2').innerHTML=decodeURI(getQueryVariable('No'))
-                document.getElementById('toinfo3').innerHTML=decodeURI(getQueryVariable('Class'))
-                document.getElementById('toinfo4').innerHTML=decodeURI(getQueryVariable('College'))
-                document.getElementById('toinfo5').innerHTML=decodeURI(etQueryVariable('School'))
-            </script>
-        </div>
-    </div>
-    <div id="code">
-    </div>
-    <div id="check">
-        返校签到
+<div id="header">
+    <img id="back2before" src="./img/btn_left.png">身份码
+</div>
+<div id="container">
+    <div class="card" id="time">
+        2021-
     </div>
     <script>
-        document.getElementById('check').addEventListener('click', function () {
-            document.getElementById('code').classList.add('red')
-            document.getElementById('check').remove()
-        })
-        document.getElementById('header').addEventListener('click', function () {
-            location.href = 'before.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
-        })
+        function time() {
+            let mydate = new Date();
+            let timeText = ""
+            timeText += mydate.getFullYear() + "-";
+            timeText += mydate.getMonth() + 1 + "-";
+            if (mydate.getDate() < 10)
+                timeText += "0" + mydate.getDate() + " "
+            else
+                timeText += mydate.getDate() + " "
+            if (mydate.getHours() < 10)
+                timeText += "0" + mydate.getHours() + ":"
+            else
+                timeText += mydate.getHours() + ":"
+            if (mydate.getMinutes() < 10)
+                timeText += "0" + mydate.getMinutes() + ":"
+            else
+                timeText += mydate.getMinutes() + ":"
+            if (mydate.getSeconds() < 10)
+                timeText += "0" + mydate.getSeconds()
+            else
+                timeText += mydate.getSeconds()
+            document.getElementById('time').innerHTML = timeText
+            setTimeout(time, 1000)
+        }
+
+        time()
     </script>
+    <div class="card" id="info">
+        <p class="title">学生信息</p>
+        <table border="0">
+            <tbody>
+            <tr>
+                <td class="img"><img alt="" src="img/Name.png"></td>
+                <td id="toinfo1">123</td>
+            </tr>
+            <tr>
+                <td class="img"><img alt="" src="img/No.png"></td>
+                <td id="toinfo2">4160210520</td>
+            </tr>
+            <tr>
+                <td class="img"><img alt="" src="img/Class.png"></td>
+                <td id="toinfo3">21本5</td>
+            </tr>
+            <tr>
+                <td class="img"><img alt="" src="img/College.png"></td>
+                <td id="toinfo4">学院</td>
+            </tr>
+            <tr>
+                <td class="img"><img alt="" src="img/School.png"></td>
+                <td id="toinfo5">武汉工程科技学<br>院</td>
+            </tr>
+            </tbody>
+        </table>
+        <script>
+            document.getElementById('toinfo1').innerHTML = decodeURI(getQueryVariable('Name'))
+            document.getElementById('toinfo2').innerHTML = decodeURI(getQueryVariable('No'))
+            document.getElementById('toinfo3').innerHTML = decodeURI(getQueryVariable('Class'))
+            document.getElementById('toinfo4').innerHTML = decodeURI(getQueryVariable('College'))
+            document.getElementById('toinfo5').innerHTML = decodeURI(etQueryVariable('School'))
+        </script>
+    </div>
+</div>
+<div id="code">
+</div>
+<div id="check">
+    返校签到
+</div>
+<script>
+    document.getElementById('check').addEventListener('click', function () {
+        document.getElementById('code').classList.add('red')
+        document.getElementById('check').remove()
+    })
+    document.getElementById('header').addEventListener('click', function () {
+        location.href = 'before.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
+    })
+</script>
 <!--    <div id="tool">-->
 <!--        <img src="img/btn_left.png" alt="">-->
 <!--    </div>-->
@@ -126,29 +127,29 @@
 <!--            })-->
 <!--        </script>-->
 <!--    </div>-->
-    <script>
-        document.getElementById('tool').addEventListener('click', function () {
-            document.getElementById('toolpage').style.zIndex = 9999
-            document.getElementById('toolpage').style.opacity = '100%'
-        })
-        document.getElementById('close').addEventListener('click', function () {
-            document.getElementById('toolpage').style.zIndex = -1
-            document.getElementById('toolpage').style.opacity = '0'
-        })
-        document.getElementById('info1').addEventListener('change', function () {
-            document.getElementById('toinfo1').innerHTML = document.getElementById('info1').value;
-        })
-        document.getElementById('info2').addEventListener('change', function () {
-            document.getElementById('toinfo2').innerHTML = document.getElementById('info2').value;
-        })
-        document.getElementById('info3').addEventListener('change', function () {
-            document.getElementById('toinfo3').innerHTML = document.getElementById('info3').value;
-        })
-        document.getElementById('info4').addEventListener('change', function () {
-            document.getElementById('toinfo4').innerHTML = document.getElementById('info4').value;
-        })
-        document.getElementById('info5').addEventListener('change', function () {
-            document.getElementById('toinfo5').innerHTML = document.getElementById('info5').value;
-        })
-    </script>
+<script>
+    document.getElementById('tool').addEventListener('click', function () {
+        document.getElementById('toolpage').style.zIndex = 9999
+        document.getElementById('toolpage').style.opacity = '100%'
+    })
+    document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('toolpage').style.zIndex = -1
+        document.getElementById('toolpage').style.opacity = '0'
+    })
+    document.getElementById('info1').addEventListener('change', function () {
+        document.getElementById('toinfo1').innerHTML = document.getElementById('info1').value;
+    })
+    document.getElementById('info2').addEventListener('change', function () {
+        document.getElementById('toinfo2').innerHTML = document.getElementById('info2').value;
+    })
+    document.getElementById('info3').addEventListener('change', function () {
+        document.getElementById('toinfo3').innerHTML = document.getElementById('info3').value;
+    })
+    document.getElementById('info4').addEventListener('change', function () {
+        document.getElementById('toinfo4').innerHTML = document.getElementById('info4').value;
+    })
+    document.getElementById('info5').addEventListener('change', function () {
+        document.getElementById('toinfo5').innerHTML = document.getElementById('info5').value;
+    })
+</script>
 </body>

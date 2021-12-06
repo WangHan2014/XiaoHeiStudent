@@ -1,4 +1,4 @@
-package com.xioahei;
+package com.xioahei.Activity;
 
 import android.app.Activity;
 import android.os.Build;
@@ -8,12 +8,25 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.xioahei.R;
+import com.xioahei.User;
+import com.xioahei.Util.StatusBarUtils;
 
-import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//生成出门绿码
 public class goOutActivity extends AppCompatActivity {
+
+    /**
+     * Called when the activity has detected the user's press of the back
+     * key. The {@link #getOnBackPressedDispatcher() OnBackPressedDispatcher} will be given a
+     * chance to handle the back button before the default behavior of
+     * {@link Activity#onBackPressed()} is invoked.
+     *
+     * @see #getOnBackPressedDispatcher()
+     */
+    private static boolean mBackKeyPressed;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,16 +58,6 @@ public class goOutActivity extends AppCompatActivity {
             }
         });
     }
-
-    /**
-     * Called when the activity has detected the user's press of the back
-     * key. The {@link #getOnBackPressedDispatcher() OnBackPressedDispatcher} will be given a
-     * chance to handle the back button before the default behavior of
-     * {@link Activity#onBackPressed()} is invoked.
-     *
-     * @see #getOnBackPressedDispatcher()
-     */
-    private static boolean mBackKeyPressed;
 
     @Override
     public void onBackPressed() {

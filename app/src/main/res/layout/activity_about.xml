@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activity.about"
+        android:orientation="vertical"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+        <TextView
+                android:text="版本号："
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_AppVersion"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+        <TextView
+                android:text="更新内容："
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+        />
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_UpdateLog"/>
+    </LinearLayout>
+    <TextView
+            android:text="作者：一个不怎么聪明的人"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_margin="20dp"/>
+    <TextView
+            android:id="@+id/textView_Warning"
+            android:text="本APP已在全球最大的同性交友社区开源，代码仅供学习交流只用，请于下载后24小时内删除。请勿用于违法违纪行为，造成任何后果请自信承担。"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+</LinearLayout>
