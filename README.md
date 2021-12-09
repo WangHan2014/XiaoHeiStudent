@@ -2,7 +2,6 @@
 
 ## 简介
 
-<center>  </center>
 ![版本号](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-0.4-brightgreen)
 
 ~~小黑学生是小北学生的黑化版~~
@@ -34,6 +33,6 @@ gradleVersion=4.2.0
 
 
 ## 预览截图
-<center>![截图](https://github.com/WangHan2014/XiaoHeiStudent/blob/main/screeshots/MainActivity.png)</center>
+![截图](https://github.com/WangHan2014/XiaoHeiStudent/blob/main/screeshots/MainActivity.png)
 
 <center>仅供学习交流,严禁用于商业用途,请于24小时内删除 </center>
