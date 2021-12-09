@@ -35,4 +35,5 @@ gradleVersion=4.2.0
 
 ## 预览截图
 <center>![截图](https://github.com/WangHan2014/XiaoHeiStudent/blob/main/screeshots/MainActivity.png)</center>
+
 <center>仅供学习交流,严禁用于商业用途,请于24小时内删除 </center>
