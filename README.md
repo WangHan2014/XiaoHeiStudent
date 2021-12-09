@@ -1,3 +1,4 @@
+![Screenshot_20211209-155007](https://user-images.githubusercontent.com/53888453/145356888-df1333ed-703f-4740-bfc6-bd6568851e23.png)
 # 小黑学生
 
 ## 简介
@@ -33,5 +34,5 @@ gradleVersion=4.2.0
 
 
 ## 预览截图
-
+MainActivity.png
 <center>仅供学习交流,严禁用于商业用途,请于24小时内删除 </center>
