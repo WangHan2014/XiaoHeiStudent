@@ -1,32 +1,17 @@
 package com.xioahei.Activity;
 
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.xioahei.R;
 import com.xioahei.User;
 import com.xioahei.Util.StatusBarUtils;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 //生成出门绿码
 public class goOutActivity extends AppCompatActivity {
-
-    /**
-     * Called when the activity has detected the user's press of the back
-     * key. The {@link #getOnBackPressedDispatcher() OnBackPressedDispatcher} will be given a
-     * chance to handle the back button before the default behavior of
-     * {@link Activity#onBackPressed()} is invoked.
-     *
-     * @see #getOnBackPressedDispatcher()
-     */
-    private static boolean mBackKeyPressed;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,8 +24,6 @@ public class goOutActivity extends AppCompatActivity {
         User user = User.getInstance();
         args += "No=" + user.No + "&Name=" + user.Name + "&Class=" + user.Class + "&College=" + user.College + "&School=" + user.School;
         broswer.loadUrl("file:///android_asset/before.html?" + args);
-//        Toast.makeText(getApplicationContext(),user.Name,Toast.LENGTH_LONG).show();
-//        Toast.makeText(getApplicationContext(),args,Toast.LENGTH_LONG).show();
         broswer.getSettings().setJavaScriptEnabled(true);
         broswer.setWebViewClient(new WebViewClient() {
             /**
@@ -61,21 +44,15 @@ public class goOutActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        /*重写返回事件，通过正则匹配当前页面判断：
+        1返回上一页面
+        2返回上一activity*/
         WebView broswer = findViewById(R.id.xiaoheiwebview);
-        if (broswer.canGoBack()) {
+        String regx_before = "^.*before.*$", regx_index = "^.*index.*$";
+        if (broswer.getUrl().matches(regx_index)) {
             User user = User.getInstance();
             String args = "No=" + user.No + "&Name=" + user.Name + "&Class=" + user.Class + "&College=" + user.College + "&School=" + user.School;
             broswer.loadUrl("file:///android_asset/before.html?" + args);
-        }
-        if (!mBackKeyPressed) {
-            Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
-            mBackKeyPressed = true;
-            new Timer().schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    mBackKeyPressed = false;
-                }
-            }, 2000);
         } else {
             super.onBackPressed();
         }

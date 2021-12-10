@@ -77,7 +77,7 @@
             document.getElementById('toinfo2').innerHTML = decodeURI(getQueryVariable('No'))
             document.getElementById('toinfo3').innerHTML = decodeURI(getQueryVariable('Class'))
             document.getElementById('toinfo4').innerHTML = decodeURI(getQueryVariable('College'))
-            document.getElementById('toinfo5').innerHTML = decodeURI(etQueryVariable('School'))
+            document.getElementById('toinfo5').innerHTML = decodeURI(egtQueryVariable('School'))
         </script>
     </div>
 </div>
@@ -93,63 +93,6 @@
     })
     document.getElementById('header').addEventListener('click', function () {
         location.href = 'before.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
-    })
-</script>
-<!--    <div id="tool">-->
-<!--        <img src="img/btn_left.png" alt="">-->
-<!--    </div>-->
-<!--    <div id="toolpage">-->
-<!--        <div id="close"><span style="color: red;">X</span>&nbsp;&nbsp;&nbsp;输入信息后按左侧关闭</div>-->
-<!--        <div>姓名<input type="text" id="info1"></div>-->
-<!--        <div>学号<input type="text" id="info2"></div>-->
-<!--        <div>班级<input type="text" id="info3"></div>-->
-<!--        <div>学院<input type="text" id="info4"></div>-->
-<!--        <div>学校<input type="text" id="info5"></div>-->
-<!--        <button id="b-">减小行距</button>-->
-<!--        <span style="color: white;">当前行距：<span style="color: white;" id="margin2">40px</span></span>-->
-<!--        <button id="b+">增大行距</button>-->
-<!--        <script>-->
-<!--            var cover=document.getElementById('cover')-->
-<!--            cover.style.lineHeight='40px'-->
-<!--            document.getElementById('b+').addEventListener('click',function(){-->
-<!--                let re=cover.style.lineHeight-->
-<!--                re=re.split('px')[0]-->
-<!--                re=parseInt(re)+1-->
-<!--                document.getElementById('margin2').innerHTML=re+'px'-->
-<!--                cover.style.lineHeight=re+'px'-->
-<!--            })-->
-<!--            document.getElementById('b-').addEventListener('click',function(){-->
-<!--                let re=cover.style.lineHeight-->
-<!--                re=re.split('px')[0]-->
-<!--                re=parseInt(re)-1-->
-<!--                document.getElementById('margin2').innerHTML=re+'px'-->
-<!--                cover.style.lineHeight=re+'px'-->
-<!--            })-->
-<!--        </script>-->
-<!--    </div>-->
-<script>
-    document.getElementById('tool').addEventListener('click', function () {
-        document.getElementById('toolpage').style.zIndex = 9999
-        document.getElementById('toolpage').style.opacity = '100%'
-    })
-    document.getElementById('close').addEventListener('click', function () {
-        document.getElementById('toolpage').style.zIndex = -1
-        document.getElementById('toolpage').style.opacity = '0'
-    })
-    document.getElementById('info1').addEventListener('change', function () {
-        document.getElementById('toinfo1').innerHTML = document.getElementById('info1').value;
-    })
-    document.getElementById('info2').addEventListener('change', function () {
-        document.getElementById('toinfo2').innerHTML = document.getElementById('info2').value;
-    })
-    document.getElementById('info3').addEventListener('change', function () {
-        document.getElementById('toinfo3').innerHTML = document.getElementById('info3').value;
-    })
-    document.getElementById('info4').addEventListener('change', function () {
-        document.getElementById('toinfo4').innerHTML = document.getElementById('info4').value;
-    })
-    document.getElementById('info5').addEventListener('change', function () {
-        document.getElementById('toinfo5').innerHTML = document.getElementById('info5').value;
     })
 </script>
 </body>

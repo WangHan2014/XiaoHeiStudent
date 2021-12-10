@@ -45,7 +45,6 @@ div {
     flex-direction: column;
     margin-top: 10px;
     padding: 30px;
-    /* background-color: red; */
 }
 
 #info .title {
@@ -72,6 +71,7 @@ div {
 
 #code.red {
     background-color: #D73B3C;
+    animation: none;
 }
 
 @keyframes code_green {
