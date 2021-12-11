@@ -9,8 +9,8 @@ android {
         applicationId "com.xioahei"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 16
+        versionName "0.4.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

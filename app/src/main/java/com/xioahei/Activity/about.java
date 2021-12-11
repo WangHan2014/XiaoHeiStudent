@@ -17,7 +17,7 @@ public class about extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         AppVersion = findViewById(R.id.textView_AppVersion);
         UpdateLog = findViewById(R.id.textView_UpdateLog);
-        AppVersion.setText(AppInfo.APP_VERSION);
+        AppVersion.setText(AppInfo.APP_VERSION(this));
         UpdateLog.setText(AppInfo.UPDATE_LOG);
         Warning = findViewById(R.id.textView_Warning);
         Warning.setTextColor(Color.RED);

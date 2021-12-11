@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         //更新标题栏和通知栏
         TextView title = findViewById(R.id.textView_AppTitle);
-        title.setText("小黑学生v" + AppInfo.APP_VERSION);
+        title.setText("小黑学生v" + AppInfo.APP_VERSION(this));
         StatusBarUtils.setWindowStatusBarColor(this, R.color.design_default_color_primary);
         long a = Long.parseLong(getTimeStamp());
         long b = Long.parseLong(dateToStamp(AppInfo.LIVE_TIME));

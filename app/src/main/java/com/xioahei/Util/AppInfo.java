@@ -1,7 +1,19 @@
 package com.xioahei.Util;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+
 public class AppInfo {
-    public static final String APP_VERSION = "0.4.1";
-    public static final String UPDATE_LOG = "移除了一些已经弃用的代码\n修复了一个导致无法签到的bug\n更新了默认信息";
-    public static final String LIVE_TIME = "2021-12-20";
+    public static final String UPDATE_LOG = "修复了版本号问题\n修复了一个布局bug";
+    public static final String LIVE_TIME = "2021-12-24";
+    //public static String APP_VERSION;
+
+    public static String APP_VERSION(Context context) {
+        try {
+            return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
