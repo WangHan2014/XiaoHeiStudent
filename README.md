@@ -2,7 +2,7 @@
 
 ## 简介
 
-![版本号](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-0.4.1-brightgreen)
+![版本号](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-0.5-brightgreen)
 
 ~~小黑学生是小bei学生的黑化版~~
 
