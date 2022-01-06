@@ -21,16 +21,21 @@
             display: block;
             width: 100vw;
         }
+
+
     </style>
 </head>
 
 <body>
 <img alt="" src="./img/up.jpg">
-<img alt="" src="./img/Tabs.jpg" style="bottom: 0px;position: fixed;left: 50%;transform: translateX(-50%);">
+<img alt="" src="./img/Tabs.jpg"
+     style="bottom: 0px;position: fixed;left: 50%;transform: translateX(-50%);">
 <script>
     document.body.addEventListener('click', function () {
         location.href = 'index.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
     })
+
+
 </script>
 </body>
 

@@ -1,17 +1,20 @@
-package com.xioahei.Activity;
+package com.xiaohei.Activity;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.xioahei.R;
-import com.xioahei.User;
-import com.xioahei.Util.StatusBarUtils;
+
+import com.xiaohei.R;
+import com.xiaohei.User.UserBean;
+import com.xiaohei.User.UserManager;
+import com.xiaohei.Util.StatusBarUtils;
 
 //生成出门绿码
-public class goOutActivity extends AppCompatActivity {
+public class GoOutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,8 +24,8 @@ public class goOutActivity extends AppCompatActivity {
         StatusBarUtils.setWindowStatusBarColor(this, R.color.xiaobei_white);
         WebView broswer = findViewById(R.id.xiaoheiwebview);
         String args = "";
-        User user = User.getInstance();
-        args += "No=" + user.No + "&Name=" + user.Name + "&Class=" + user.Class + "&College=" + user.College + "&School=" + user.School;
+        UserBean user = new UserManager().getUser(this);
+        args += "No=" + user.getSNo() + "&Name=" + user.getName() + "&Class=" + user.getClasses() + "&College=" + user.getCollege() + "&School=" + user.getSchool();
         broswer.loadUrl("file:///android_asset/before.html?" + args);
         broswer.getSettings().setJavaScriptEnabled(true);
         broswer.setWebViewClient(new WebViewClient() {
@@ -48,10 +51,11 @@ public class goOutActivity extends AppCompatActivity {
         1返回上一页面
         2返回上一activity*/
         WebView broswer = findViewById(R.id.xiaoheiwebview);
+        //前导页面和主页面的regx
         String regx_before = "^.*before.*$", regx_index = "^.*index.*$";
         if (broswer.getUrl().matches(regx_index)) {
-            User user = User.getInstance();
-            String args = "No=" + user.No + "&Name=" + user.Name + "&Class=" + user.Class + "&College=" + user.College + "&School=" + user.School;
+            UserBean user = new UserManager().getUser(this);
+            String args = "No=" + user.getSNo() + "&Name=" + user.getName() + "&Class=" + user.getClasses() + "&College=" + user.getCollege() + "&School=" + user.getSchool();
             broswer.loadUrl("file:///android_asset/before.html?" + args);
         } else {
             super.onBackPressed();

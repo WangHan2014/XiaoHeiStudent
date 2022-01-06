@@ -1,4 +1,4 @@
-package com.xioahei.Util;
+package com.xiaohei.Util;
 
 import android.app.Activity;
 import android.app.Dialog;

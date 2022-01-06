@@ -45,6 +45,8 @@
         }
 
         time()
+
+
     </script>
     <div class="card" id="info">
         <p class="title">学生信息</p>
@@ -78,6 +80,8 @@
             document.getElementById('toinfo3').innerHTML = decodeURI(getQueryVariable('Class'))
             document.getElementById('toinfo4').innerHTML = decodeURI(getQueryVariable('College'))
             document.getElementById('toinfo5').innerHTML = decodeURI(egtQueryVariable('School'))
+
+
         </script>
     </div>
 </div>
@@ -94,5 +98,7 @@
     document.getElementById('header').addEventListener('click', function () {
         location.href = 'before.html?No=' + getQueryVariable('No') + '&Name=' + getQueryVariable('Name') + '&Class=' + getQueryVariable('Class') + '&College=' + getQueryVariable('College') + '&School=' + getQueryVariable('School')
     })
+
+
 </script>
 </body>
