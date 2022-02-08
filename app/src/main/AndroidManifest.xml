@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name="com.xiaohei.Activity.AboutActivity"></activity>
+
         <activity
             android:name="com.xiaohei.Activity.SettingsActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -24,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.xiaohei.Activity.GoOutActivity"
             android:label="小黑出门"

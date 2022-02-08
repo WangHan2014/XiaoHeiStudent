@@ -13,7 +13,7 @@ import com.xiaohei.Util.AppInfo;
 import com.xiaohei.Util.ConfigHelper;
 
 //关于软件的页面
-public class AboutActivity extends AppCompatActivity {
+public final class AboutActivity extends AppCompatActivity {
     private TextView AppVersion, UpdateLog, Warning;
 
     @Override

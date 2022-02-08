@@ -23,13 +23,14 @@ import com.xiaohei.Util.AppInfo;
 import com.xiaohei.Util.ConfigHelper;
 
 //主页面、信息设置页面
-public class SettingsActivity extends AppCompatActivity {
+public final class SettingsActivity extends AppCompatActivity {
     private EditText Name, No, Class, College, School;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
         //初始化按钮
         Button goOut = findViewById(R.id.goOut);
         Button aboutButton = findViewById(R.id.aboutThisApp);
@@ -37,13 +38,17 @@ public class SettingsActivity extends AppCompatActivity {
         //更新标题栏和通知栏
         this.setTitle("小黑学生v" + AppInfo.APP_VERSION(this));
         //StatusBarUtils.setWindowStatusBarColor(this, R.color.design_default_color_primary);
-        long a = Long.parseLong(getTimeStamp());
-        long b = Long.parseLong(dateToStamp(AppInfo.LIVE_TIME));
-        if (a > b) {
+        try {
+            long a = Long.parseLong(getTimeStamp());
+            long b = Long.parseLong(dateToStamp(AppInfo.LIVE_TIME));
+            if (a > b) {
+                throw new Exception();
+            } else {
+                aboutButton.setText(aboutButton.getText() + "软件有效期：" + AppInfo.LIVE_TIME);
+            }
+        } catch (Exception e) {
             goOut.setEnabled(false);
             aboutButton.setText(aboutButton.getText() + "（软件已过期）");
-        } else {
-            aboutButton.setText(aboutButton.getText() + "软件有效期：" + AppInfo.LIVE_TIME);
         }
 
         // 初始化输入框

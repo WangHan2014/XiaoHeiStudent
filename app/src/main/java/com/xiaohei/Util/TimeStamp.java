@@ -8,7 +8,7 @@ public class TimeStamp {
     /*
      * 将时间转换为时间戳
      */
-    public static String dateToStamp(String s) {
+    public static String dateToStamp(String s) throws Exception {
         String res;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;

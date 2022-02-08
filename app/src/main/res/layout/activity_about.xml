@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:text="本APP已在全球最大的同性交友社区开源，代码仅供学习交流只用，请于下载后24小时内删除。请勿用于违法违纪行为，造成任何后果请自信承担。" />
+        android:text="本APP已在全球最大的同性交友社区开源，代码仅供学习交流使用，请于下载后24小时内删除。请勿用于违法违纪行为，造成任何后果请自信承担。" />
 
     <Button
         android:layout_width="match_parent"

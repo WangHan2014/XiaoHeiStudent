@@ -92,21 +92,9 @@
 
                 <Button
                     android:id="@+id/goOut"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="我要出门" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/runForClass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:text="我要请假（开发中）" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

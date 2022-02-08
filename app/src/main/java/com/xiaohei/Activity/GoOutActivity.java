@@ -1,5 +1,10 @@
 package com.xiaohei.Activity;
 
+import static com.xiaohei.Util.TimeStamp.dateToStamp;
+import static com.xiaohei.Util.TimeStamp.getTimeStamp;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebView;
@@ -11,38 +16,78 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.xiaohei.R;
 import com.xiaohei.User.UserBean;
 import com.xiaohei.User.UserManager;
+import com.xiaohei.Util.AppInfo;
 import com.xiaohei.Util.StatusBarUtils;
 
 //生成出门绿码
-public class GoOutActivity extends AppCompatActivity {
+public final class GoOutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goout);
+    }
 
-        StatusBarUtils.setWindowStatusBarColor(this, R.color.xiaobei_white);
-        WebView broswer = findViewById(R.id.xiaoheiwebview);
-        String args = "";
-        UserBean user = new UserManager().getUser(this);
-        args += "No=" + user.getSNo() + "&Name=" + user.getName() + "&Class=" + user.getClasses() + "&College=" + user.getCollege() + "&School=" + user.getSchool();
-        broswer.loadUrl("file:///android_asset/before.html?" + args);
-        broswer.getSettings().setJavaScriptEnabled(true);
-        broswer.setWebViewClient(new WebViewClient() {
-            /**
-             * @param view
-             * @param url
-             * @deprecated
-             */
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (Build.VERSION.SDK_INT < 26) {
-                    view.loadUrl(url);
-                    return true;
-                }
-                return false;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            long a = Long.parseLong(getTimeStamp());
+            long b = Long.parseLong(dateToStamp(AppInfo.LIVE_TIME));
+            if (a > b) {
+                throw new Exception();
             }
-        });
+
+            StatusBarUtils.setWindowStatusBarColor(this, R.color.xiaobei_white);
+
+            WebView broswer = findViewById(R.id.xiaoheiwebview);
+            String args = "";
+            UserBean user = new UserManager().getUser(this);
+            args += "No=" + user.getSNo() + "&Name=" + user.getName() + "&Class=" + user.getClasses() + "&College=" + user.getCollege() + "&School=" + user.getSchool();
+            broswer.loadUrl("file:///android_asset/before.html?" + args);
+            broswer.getSettings().setJavaScriptEnabled(true);
+            broswer.setWebViewClient(new WebViewClient() {
+                /**
+                 * @param view
+                 * @param url
+                 * @deprecated
+                 */
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    if (Build.VERSION.SDK_INT < 26) {
+                        view.loadUrl(url);
+                        return true;
+                    }
+                    return false;
+                }
+            });
+        } catch (Exception e) {
+            new AlertDialog.Builder(this)
+                    .setTitle("软件已过期")
+                    .setMessage("软件已经开源了\n你已经是个成熟的大人了，要学会自己编译软件")
+                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    })
+                    .setCancelable(false)
+                    .setNegativeButton("我不会", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            new AlertDialog.Builder(GoOutActivity.this)
+                                    .setTitle("软件已过期")
+                                    .setMessage("山重水复疑无路\n柳暗花明又一村")
+                                    .setCancelable(false)
+                                    .setPositiveButton("好", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            finish();
+                                        }
+                                    }).show();
+                        }
+                    }).show();
+        }
     }
 
     @Override
